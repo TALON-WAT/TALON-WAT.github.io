@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[pictureTest]]></title>
+    <url>%2F2019%2F09%2F13%2FpictureTest%2F</url>
+    <content type="text"><![CDATA[hello everyone~]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[hello blog]]></title>
+    <url>%2F2019%2F09%2F13%2Fhello-hexo%2F</url>
+    <content type="text"><![CDATA[中秋快乐~]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+</search>
