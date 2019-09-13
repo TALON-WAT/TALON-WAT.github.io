@@ -1646,6 +1646,7 @@ article:last-child .post-eof {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
 }
 .site-author-name {
   color: #222;
@@ -1673,7 +1674,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5013b6;
+  background: #46556a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1922,8 +1923,11 @@ article:last-child .post-eof {
 .footer-inner {
   text-align: center;
 }
+#animate {
+  animation: iconAnimate 1.33s ease-in-out infinite;
+}
 .with-love {
-  color: #808080;
+  color: #ff0000;
   display: inline-block;
   margin: 0 5px;
 }
@@ -2355,19 +2359,6 @@ ul.breadcrumb li + li:last-child {
   background: #f9f9f9;
   border-bottom-color: #fff;
 }
-.menu-item-active a::after,
-.menu .menu-item a:hover::after,
-.menu .menu-item span.exturl:hover::after {
-  background-color: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
-}
 .menu .menu-item {
   display: block;
   margin: 0;
@@ -2438,9 +2429,6 @@ ul.breadcrumb li + li:last-child {
 .sub-menu .menu-item-active a:hover {
   background: #fff;
   border-bottom-color: #fc6423;
-}
-.sub-menu .menu-item-active a::after {
-  content: initial;
 }
 .sidebar {
   bottom: auto;
