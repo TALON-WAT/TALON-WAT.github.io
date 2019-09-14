@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Books]]></title>
+    <url>%2F2019%2F09%2F14%2FBooks%2F</url>
+    <content type="text"><![CDATA[《平凡的世界》路遥]]></content>
+      <categories>
+        <category>Books</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Tank Battle by Java]]></title>
     <url>%2F2019%2F09%2F14%2FTank-Battle-by-Java%2F</url>
     <content type="text"><![CDATA[坦克大战 单人版一款小游戏 使用了LWJGL github : https://github.com/TALON-WAT/Tank-Battle-by-Java]]></content>
