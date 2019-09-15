@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Books]]></title>
-    <url>%2F2019%2F09%2F14%2FBooks%2F</url>
-    <content type="text"><![CDATA[Novel《平凡的世界》路遥 平凡的世界,不平凡的两家人. 孙家,田家,以及他们辐射出的周围人在黄土地上的故事. 《嫌疑犯X的献身》东野圭吾《恶意》东野圭吾《白夜行》东野圭吾《回廊亭杀人事件》东野圭吾《放学后》东野圭吾《秘密》东野圭吾]]></content>
-      <categories>
-        <category>Books</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Tank Battle by Java]]></title>
     <url>%2F2019%2F09%2F14%2FTank-Battle-by-Java%2F</url>
     <content type="text"><![CDATA[坦克大战 单人版一款小游戏 使用了LWJGL GitHub: https://github.com/TALON-WAT/Tank-Battle-by-Java]]></content>
@@ -25,9 +17,9 @@
     <content type="text"><![CDATA[hello everyone~]]></content>
   </entry>
   <entry>
-    <title><![CDATA[hello blog]]></title>
+    <title><![CDATA[Hello Everyone!~]]></title>
     <url>%2F2019%2F09%2F13%2Fhello-hexo%2F</url>
-    <content type="text"><![CDATA[中秋快乐~]]></content>
+    <content type="text"><![CDATA[中秋快乐~ 这是我的个人博客! 先给大家分享一些我之前看过的小说! 小说 Novel《平凡的世界》路遥 平凡的世界,不平凡的两家人. 孙家,田家,以及他们辐射出的周围人在黄土地上的故事. 《嫌疑犯X的献身》东野圭吾 《恶意》东野圭吾 《白夜行》东野圭吾 《回廊亭杀人事件》东野圭吾 《放学后》东野圭吾 《秘密》东野圭吾]]></content>
       <categories>
         <category>other</category>
       </categories>
