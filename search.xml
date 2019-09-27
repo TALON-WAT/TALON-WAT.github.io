@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[note03]]></title>
+    <url>%2F2019%2F09%2F27%2Fnote03%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[javabean]]></title>
+    <url>%2F2019%2F09%2F27%2Fjavabean%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的反射]]></title>
     <url>%2F2019%2F09%2F25%2Fnote02%2F</url>
     <content type="text"></content>
