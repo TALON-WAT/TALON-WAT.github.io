@@ -55,17 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="I am on my way">
+  <meta name="description" content="代理模式代理模式的应用场景:  一个对象不能直接访问另外一个对象的时候，我们可以通过访问该对象的代理对象去访问它。 在不修改类的源码的情况下，动态地增强类的方法，便于程序的扩展 动态地给接口创建代理对象，动态地实现接口中的方法 统一在方法执行之前做前置处理工作，在方法执行之后做后置处理工作，这样可以大大减少代码中的重复代码。这其实就是Spring中的AOP思想  面向对象设计有一个基本原则:开放封">
+<meta name="keywords" content="note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的反射">
+<meta property="og:title" content="设计模式_02_静态代理与动态代理">
 <meta property="og:url" content="https://TALON-WAT.github.io/2019/09/25/note02/index.html">
 <meta property="og:site_name" content="Talon Wat&#39;s Blog">
-<meta property="og:description" content="I am on my way">
+<meta property="og:description" content="代理模式代理模式的应用场景:  一个对象不能直接访问另外一个对象的时候，我们可以通过访问该对象的代理对象去访问它。 在不修改类的源码的情况下，动态地增强类的方法，便于程序的扩展 动态地给接口创建代理对象，动态地实现接口中的方法 统一在方法执行之前做前置处理工作，在方法执行之后做后置处理工作，这样可以大大减少代码中的重复代码。这其实就是Spring中的AOP思想  面向对象设计有一个基本原则:开放封">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T11:57:06.089Z">
+<meta property="og:image" content="https://talon-wat.github.io/2019/09/25/note02/staticProxy.jpg">
+<meta property="og:image" content="https://talon-wat.github.io/2019/09/25/note02/dynamicProxy.jpg">
+<meta property="og:updated_time" content="2019-10-09T09:50:55.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的反射">
-<meta name="twitter:description" content="I am on my way">
+<meta name="twitter:title" content="设计模式_02_静态代理与动态代理">
+<meta name="twitter:description" content="代理模式代理模式的应用场景:  一个对象不能直接访问另外一个对象的时候，我们可以通过访问该对象的代理对象去访问它。 在不修改类的源码的情况下，动态地增强类的方法，便于程序的扩展 动态地给接口创建代理对象，动态地实现接口中的方法 统一在方法执行之前做前置处理工作，在方法执行之后做后置处理工作，这样可以大大减少代码中的重复代码。这其实就是Spring中的AOP思想  面向对象设计有一个基本原则:开放封">
+<meta name="twitter:image" content="https://talon-wat.github.io/2019/09/25/note02/staticProxy.jpg">
   <link rel="canonical" href="https://TALON-WAT.github.io/2019/09/25/note02/">
 
 
@@ -80,7 +84,7 @@
   };
 </script>
 
-  <title>Java中的反射 | Talon Wat's Blog</title>
+  <title>设计模式_02_静态代理与动态代理 | Talon Wat's Blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -206,7 +210,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
 
   </li>
       
@@ -288,7 +292,7 @@
       <meta itemprop="name" content="Talon Wat's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Java中的反射
+        <h1 class="post-title" itemprop="name headline">设计模式_02_静态代理与动态代理
 
           
         </h1>
@@ -304,12 +308,33 @@
                 
               
 
-              <time title="创建时间：2019-09-25 19:56:48 / 修改时间：19:57:06" itemprop="dateCreated datePublished" datetime="2019-09-25T19:56:48+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 19:56:48" itemprop="dateCreated datePublished" datetime="2019-09-25T19:56:48+08:00">2019-09-25</time>
             </span>
           
             
 
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-09 17:50:55" itemprop="dateModified" datetime="2019-10-09T17:50:55+08:00">2019-10-09</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -323,7 +348,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p>代理模式的应用场景:</p>
+<ol>
+<li>一个对象不能直接访问另外一个对象的时候，我们可以通过访问该对象的代理对象去访问它。</li>
+<li>在不修改类的源码的情况下，动态地增强类的方法，便于程序的扩展</li>
+<li>动态地给接口创建代理对象，动态地实现接口中的方法</li>
+<li>统一在方法执行之前做前置处理工作，在方法执行之后做后置处理工作，这样可以大大减少代码中的重复代码。这其实就是Spring中的AOP思想</li>
+</ol>
+<p>面向对象设计有一个基本原则:开放封闭原则,对扩展开放对修改封闭</p>
+<p>改变/增强一个方法，我们又哪些办法可以做到：</p>
+<ol>
+<li>继承</li>
+<li>装饰者模式：<ol>
+<li>装饰者和被装饰者要实现相同的接口</li>
+<li>将被装饰者的对象传入到装饰者中</li>
+<li>如果不需要增强的方法由被装饰者完成，装饰者只增强方法</li>
+</ol>
+</li>
+<li>代理模式:静态代理和动态代理<ol>
+<li>代理模式的组成部分:<ol>
+<li>代理者</li>
+<li>委托者(被代理者)</li>
+<li>接口</li>
+</ol>
+</li>
+<li>代理模式的特点:<ol>
+<li>代理者和委托者要实现相同的接口</li>
+<li>将委托者的对象传入到代理者中</li>
+<li>如果不需要增强的方法由委托者完成，代理者只增强方法</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>代理模式的分类:</p>
+<ol>
+<li>静态代理模式:包含委托类、代理类以及统一的接口</li>
+<li>动态代理模式:包含委托类和统一的接口，不包含代理类，而是使用反射机制在调用的时候动态生成代理对象</li>
+</ol>
+<h2 id="一-静态代理"><a href="#一-静态代理" class="headerlink" title="一.静态代理"></a>一.静态代理</h2><h3 id="1-Diagrams"><a href="#1-Diagrams" class="headerlink" title="1.Diagrams"></a>1.Diagrams</h3><p><img src="/2019/09/25/note02/staticProxy.jpg" alt="decker"></p>
+<h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IKindWomen</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">happy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jinlian</span> <span class="keyword">implements</span> <span class="title">IKindWomen</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">happy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"金莲正在happy..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Wangpo</span> <span class="keyword">implements</span> <span class="title">IKindWomen</span> </span>&#123;</span><br><span class="line">    <span class="comment">//依赖倒置原则:依赖抽象不依赖具体,目的是增强程序的可扩展性</span></span><br><span class="line">    <span class="keyword">private</span> IKindWomen women;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Wangpo</span><span class="params">(Jinlian jinlian)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.women = jinlian;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">happy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"open room"</span>);</span><br><span class="line">        women.happy();</span><br><span class="line">        System.out.println(<span class="string">"clear room"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Jinlian jinlian = <span class="keyword">new</span> Jinlian();</span><br><span class="line">    Wangpo wangpo = <span class="keyword">new</span> Wangpo(jinlian);</span><br><span class="line">    wangpo.happy();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二-动态代理"><a href="#二-动态代理" class="headerlink" title="二.动态代理"></a>二.动态代理</h2><h3 id="1-Diagrams-1"><a href="#1-Diagrams-1" class="headerlink" title="1.Diagrams"></a>1.Diagrams</h3><p><img src="/2019/09/25/note02/dynamicProxy.jpg" alt="decker"></p>
+<h3 id="2-代码实现-1"><a href="#2-代码实现-1" class="headerlink" title="2.代码实现"></a>2.代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IKindWoman</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">happy</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">collect</span><span class="params">(<span class="keyword">double</span> money)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jinlian</span> <span class="keyword">implements</span> <span class="title">IKindWoman</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">happy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"金莲正在happy..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">collect</span><span class="params">(<span class="keyword">double</span> money)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"金莲收款: "</span> + money);</span><br><span class="line">        <span class="keyword">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//访问金莲的happy方法</span></span><br><span class="line">    Jinlian jinlian = <span class="keyword">new</span> Jinlian();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用动态代理技术生成代理对象</span></span><br><span class="line">    <span class="comment">//Proxy.newProxyInstance()方法有三个参数:</span></span><br><span class="line">    <span class="comment">// 1. 类加载器</span></span><br><span class="line">    <span class="comment">// 2. 被代理者实现的所有接口的字节码对象</span></span><br><span class="line">    <span class="comment">// 3. InvocationHandler接口的实现类对象</span></span><br><span class="line"></span><br><span class="line">    Class clazz = jinlian.getClass();</span><br><span class="line">    ClassLoader classLoader = clazz.getClassLoader();<span class="comment">//获取类加载器</span></span><br><span class="line">    Class[] interfaces = clazz.getInterfaces();<span class="comment">//委托者实现的所有接口</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Proxy.newProxyInstance(),方法的目的创建代理对象</span></span><br><span class="line">    <span class="comment">//代理对象和委托对象肯定要实现相同的接口----IKindWomen</span></span><br><span class="line">    IKindWoman proxyInstance = (IKindWoman) Proxy.newProxyInstance(classLoader, interfaces, <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">            <span class="comment">//代理者调用任何方法,都会执行invoke()</span></span><br><span class="line">            <span class="comment">//所以在invoke()方法中编写代理规则</span></span><br><span class="line">            <span class="comment">//invoke()方法的三个参数:1.proxy表示代理对象本身,我们不要去使用它,否则会发生死递归</span></span><br><span class="line">            <span class="comment">//2. method表示,当前代理对象调用的那个方法  3. args表示当前代理对象调用的方法中传入的参数</span></span><br><span class="line">            String methodName = method.getName();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//只有当调用的是happy()方法,我们才做happy的代理</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"happy"</span>.equals(methodName))&#123;</span><br><span class="line">                System.out.println(<span class="string">"open room"</span>);</span><br><span class="line">                method.invoke(jinlian,args);</span><br><span class="line">                System.out.println(<span class="string">"clear room"</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//只有当调用的方法是collect的时候,才执行收钱的代理</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"collect"</span>.equals(methodName))&#123;</span><br><span class="line">                <span class="keyword">double</span> money = (<span class="keyword">double</span>) args[<span class="number">0</span>];</span><br><span class="line">                System.out.println(<span class="string">"扣除中介费 40%: "</span> + money*<span class="number">0.4</span>);</span><br><span class="line">                <span class="keyword">return</span> method.invoke(jinlian, money*<span class="number">0.6</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//如果调用的方法是其它的方法的话,则不需要被代理,那么就执行委托者原本的方法</span></span><br><span class="line">            <span class="keyword">return</span> method.invoke(jinlian,args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    proxyInstance.happy();</span><br><span class="line">    <span class="keyword">double</span> collect = proxyInstance.collect(<span class="number">800</span>);</span><br><span class="line">    System.out.println(collect);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -333,6 +400,15 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/note/" rel="tag"># note</a>
+            
+          </div>
+        
 
         
 
@@ -348,10 +424,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/27/javabean/" rel="prev" title="javabean">
-                  javabean <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -400,6 +472,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代理模式"><span class="nav-number">1.</span> <span class="nav-text">代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-静态代理"><span class="nav-number">1.1.</span> <span class="nav-text">一.静态代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Diagrams"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.Diagrams</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-代码实现"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-动态代理"><span class="nav-number">1.2.</span> <span class="nav-text">二.动态代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Diagrams-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.Diagrams</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-代码实现-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.代码实现</span></a></li></ol></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -416,7 +490,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
